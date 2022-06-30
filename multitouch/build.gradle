@@ -49,45 +49,56 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 }
 
-task sourceJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier "sources"
-}
+//task sourceJar(type: Jar) {
+//    from android.sourceSets.main.java.srcDirs
+//    classifier "sources"
+//}
 
-publishing {
-    publications {
-        bar(MavenPublication) {
-//            groupId 'com.foo'
-//            artifactId 'bar'
-//            version '0.1'
-            artifact(sourceJar)
-            artifact("$buildDir/outputs/aar/bar-release.aar")
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            create<MavenPublication>("maven") {
+////            groupId = "com.developerlife"
+////            artifactId = "color-console"
+////            version = "1.0.1"
+//
+//                from(components["java"])
+//            }
+//        }
+//    }
+//}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId = 'com.github.eli-moss-healthy'
+                artifactId = 'Ultimate-Test'
+                version = '1.0.0'
+            }
         }
     }
-    repositories {
-        maven {
-            url "$buildDir/repo"
-        }
-    }
 }
-
 
 //afterEvaluate {
 //    publishing {
 //        publications {
 //            release(MavenPublication) {
-//                // Specify own groupId as package name of your library,
-//                // otherwise it would just use project's name (=name of the root directory) by default.
-////                groupId 'com.healthy.io.multitouch'
-//
-//                // Specify custom artifactId if needed,
-//                // otherwise it would use module's name by default.
-////                artifactId 'ultimate-multitouch'
-//
-//                // You can specify custom version,
-//                // otherwise it would use version from `android { defaultConfig { ... } }` by default.
-////            version = '1.0.0'
-////                version = android.defaultConfig.versionName
+
+                // Specify own groupId as package name of your library,
+                // otherwise it would just use project's name (=name of the root directory) by default.
+//                groupId 'com.healthy.io.multitouch'
+
+                // Specify custom artifactId if needed,
+                // otherwise it would use module's name by default.
+//                artifactId 'ultimate-multitouch'
+
+                // You can specify custom version,
+                // otherwise it would use version from `android { defaultConfig { ... } }` by default.
+//            version = '1.0.0'
+//                version = android.defaultConfig.versionName
 //            }
 //        }
 //    }
