@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MultiTouchBaseLayoutParent">
+        <attr name="isZoomEnabled" format="boolean" />
+        <attr name="isDoubleTapEnabled" format="boolean" />
+        <attr name="minScale" format="integer|reference" />
+        <attr name="maxScale" format="integer|reference" />
+        <attr name="isBoundsLimitEffectEnabled" format="boolean" />
+        <attr name="boundsLimitEffectFactor" format="integer|reference" />
+        <attr name="isOneFingerDraggingEnabled" format="boolean" />
+        <attr name="isMultiFingerDraggingEnabled" format="boolean" />
+        <attr name="isRotationEnabled" format="boolean" />
+    </declare-styleable>
+
+</resources>
