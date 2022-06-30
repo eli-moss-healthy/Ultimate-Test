@@ -56,16 +56,16 @@ afterEvaluate {
             release(MavenPublication) {
                 // Specify own groupId as package name of your library,
                 // otherwise it would just use project's name (=name of the root directory) by default.
-                groupId 'com.healthy.io.multitouch'
+//                groupId 'com.healthy.io.multitouch'
 
                 // Specify custom artifactId if needed,
                 // otherwise it would use module's name by default.
-                artifactId 'ultimate-multitouch'
+//                artifactId 'ultimate-multitouch'
 
                 // You can specify custom version,
                 // otherwise it would use version from `android { defaultConfig { ... } }` by default.
 //            version = '1.0.0'
-                version = android.defaultConfig.versionName
+//                version = android.defaultConfig.versionName
             }
         }
     }
