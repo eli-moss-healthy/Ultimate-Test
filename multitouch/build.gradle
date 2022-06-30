@@ -17,7 +17,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 32
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
     }
@@ -50,15 +50,36 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 }
 
+//afterEvaluate {
+//    publishing {
+//        publications{
+//            release(MavenPublication) {
+//                from components.release
+//
+//                groupId = 'com.healthy.io.multitouch'
+//                artifactId = 'ultimate-multitouch'
+//                version = '1.0'
+//            }
+//        }
+//    }
+//}
+
 afterEvaluate {
     publishing {
-        publications{
+        publications {
             release(MavenPublication) {
-                from components.release
+                // Specify own groupId as package name of your library,
+                // otherwise it would just use project's name (=name of the root directory) by default.
+                groupId 'com.healthy.io.multitouch'
 
-                groupId = 'com.healthy.io.multitouch'
-                artifactId = 'ultimate-multitouch'
-                version = '1.0'
+                // Specify custom artifactId if needed,
+                // otherwise it would use module's name by default.
+                artifactId 'ultimate-multitouch'
+
+                // You can specify custom version,
+                // otherwise it would use version from `android { defaultConfig { ... } }` by default.
+//            version = '1.0.0'
+                version = android.defaultConfig.versionName
             }
         }
     }
