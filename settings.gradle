@@ -1,3 +1,3 @@
-rootProject.name = "multitouch"
-include ':app'
+//rootProject.name = "multitouch"
+//include ':app'
 include ':multitouch'

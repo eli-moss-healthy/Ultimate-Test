@@ -50,20 +50,6 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 }
 
-//afterEvaluate {
-//    publishing {
-//        publications{
-//            release(MavenPublication) {
-//                from components.release
-//
-//                groupId = 'com.healthy.io.multitouch'
-//                artifactId = 'ultimate-multitouch'
-//                version = '1.0'
-//            }
-//        }
-//    }
-//}
-
 afterEvaluate {
     publishing {
         publications {
