@@ -16,7 +16,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 32
         versionCode 1
-        versionName "1.0.0"
+        versionName "1.0.6"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
     }
@@ -39,6 +39,15 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+
+//    publishing {
+//        singleVariant("release") {
+//            // if you don't want sources/javadoc, remove these lines
+//            withSourcesJar()
+//            withJavadocJar()
+//        }
+//    }
 }
 
 dependencies {
@@ -76,7 +85,8 @@ afterEvaluate {
 
                 groupId = 'com.github.eli-moss-healthy'
                 artifactId = 'Ultimate-Test'
-                version = '1.0.5'
+//                version = '1.0.6'
+                version = android.defaultConfig.versionName
             }
         }
     }
