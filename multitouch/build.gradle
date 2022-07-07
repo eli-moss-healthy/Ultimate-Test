@@ -49,26 +49,3 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 }
-
-
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-
-                // Specify own groupId as package name of your library,
-                // otherwise it would just use project's name (=name of the root directory) by default.
-                groupId = 'com.eli-moss-healthy.io'
-
-                // Specify custom artifactId if needed,
-                // otherwise it would use module's name by default.
-                artifactId = 'multitouch'
-
-                // You can specify custom version,
-                // otherwise it would use version from `android { defaultConfig { ... } }` by default.
-                version = android.defaultConfig.versionName
-            }
-        }
-    }
-}
